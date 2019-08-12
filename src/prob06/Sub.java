@@ -1,16 +1,9 @@
 package prob06;
 
-public class Sub {
-	private int a;
-	private int b;
-	
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-	}
-	
-	int calculate() {
+public class Sub extends Arith {
+	@Override
+	public int calculate() {
 		
-		return a-b;
+		return a/b;
 	}
 }

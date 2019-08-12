@@ -24,29 +24,27 @@ public class CalcApp {
 			}
 			int a = Integer.parseInt(tokens[0]);
 			int b = Integer.parseInt(tokens[2]);
+			Arith arith = null;
 			switch (tokens[1]) {
 			case "+":
-				Add add = new Add();
-				add.setValue(a, b);
-				System.out.println(add.calculate());
+				arith = new Add();
 				break;
 			case "-":
-				Sub sub = new Sub();
-				sub.setValue(a, b);
-				System.out.println(sub.calculate());
+				arith = new Sub();
 				break;
 			case "*":
-				Mul mul = new Mul();
-				mul.setValue(a, b);
-				System.out.println(mul.calculate());
+				arith = new Mul();				
 				break;
 			case "/":
-				Div div = new Div();
-				div.setValue(a, b);
-				System.out.println(div.calculate());
+				arith = new Div();				
 				break;
 			}
-
+			if(arith == null) {
+				System.out.println(">> 알 수 없는 연산입니다.");
+				break;
+			}
+			arith.setValue(a, b);
+			System.out.println(arith.calculate());
 		}
 
 		scanner.close();

@@ -1,16 +1,9 @@
 package prob06;
 
-public class Mul {
-	private int a;
-	private int b;
-	
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-	}
-	
-	int calculate() {
+public class Mul extends Arith {
+	@Override
+	public int calculate() {
 		
-		return a*b;
+		return a/b;
 	}
 }
